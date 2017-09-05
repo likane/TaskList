@@ -33,7 +33,7 @@ router.get('/task/:id', function(req, res, next){
 router.post('/task', function(req, res, next){
 	var task = req.body;
 
-	if(!task.title || (task.isDone + '')){
+	if(!task.title || !(task.isDone + '')){
 		rest.status(400);
 		res.json({
 			"error": "bad data"
